@@ -21,21 +21,78 @@
 
         let btn = document.getElementById("btn");
         let container = document.getElementById("container");
-
-        function getServerJson() {
-            // 1. 发起请求接收响应; 
-            let xhr = new XMLHttpRequest();
-            xhr.open("GET", "http://localhost/06_data.json");
-            xhr.send(null);
-
-            // 2. 接收服务器响应; 
-            xhr.onload = function () {
-                if (xhr.status === 200) {
-                    let data = JSON.parse(xhr.responseText);
-                    render(data)
-                }
+        let data = [
+            {
+                "src": "./imgs/stackedbarcolumn.png",
+                "title": "正负堆积条形图-数据标签"
+            },
+            {
+                "src": "./imgs/scatter.png",
+                "title": "视觉技法全能班(第3期)"
+            },
+            {
+                "src": "./imgs/scatter.png",
+                "title": "iPad插画系统班"
+            },
+            {
+                "src": "./imgs/scatter.png",
+                "title": "(即将停售)字体·版式·色彩·设计基础强化班"
+            },
+            {
+                "src": "./imgs/stackedbarcolumn.png",
+                "title": "B端UI设计研修班(第2期定金预售)"
+            },
+            {
+                "src": "./imgs/pivottable.png",
+                "title": "B端UI设计研修班(第2期定金预售)"
+            },
+            {
+                "src": "./imgs/circle.png",
+                "title": "B端UI设计研修班(第2期定金预售)"
+            },
+            {
+                "src": "./imgs/column.png",
+                "title": "B端UI设计研修班(第2期定金预售)"
+            },
+            {
+                "src": "./imgs/combination.png",
+                "title": "B端UI设计研修班(第2期定金预售)"
+            },
+            {
+                "src": "./imgs/circle.png",
+                "title": "B端UI设计研修班(第2期定金预售)"
+            },
+            {
+                "src": "./imgs/circle.png",
+                "title": "B端UI设计研修班(第2期定金预售)"
+            },
+            {
+                "src": "./imgs/circle.png",
+                "title": "B端UI设计研修班(第2期定金预售)"
+            },
+            {
+                "src": "./imgs/circle.png",
+                "title": "B端UI设计研修班(第2期定金预售)"
+            },
+            {
+                "src": "./imgs/circle.png",
+                "title": "B端UI设计研修班(第2期定金预售)"
             }
-        }
+        ]
+        // function getServerJson() {
+        //     // 1. 发起请求接收响应; 
+        //     let xhr = new XMLHttpRequest();
+        //     xhr.open("GET", "http://localhost/06_data.json");
+        //     xhr.send(null);
+
+        //     // 2. 接收服务器响应; 
+        //     xhr.onload = function () {
+        //         if (xhr.status === 200) {
+        //             let data = JSON.parse(xhr.responseText);
+        //             render(data)
+        //         }
+        //     }
+        // }
 
         function render(data) {
             let html = "";
@@ -61,7 +118,7 @@
             container.innerHTML = html;
         }
 
-        window.addEventListener("load", getServerJson);
+        window.addEventListener("load", render(data));
 
 
     </script>
