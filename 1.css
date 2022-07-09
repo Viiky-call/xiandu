@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.box {
+
+    width: 256px;
+    height: 172px;
+    border-radius: 30px;
+    overflow: hidden;
+    float: left;
+
+    margin-bottom: 30px;
+    /* margin-to: 30xp ; */
+    background-color: #f3f3f3;
+    position: relative;
+}
+
+.box>.mask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(97, 88, 88, 0.582);
+    opacity: 0;
+}
+
+.box:hover .mask {
+
+    opacity: 1;
+
+}
+
+
+
+.mask span {
+    color: skyblue;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 26px;
+
+}
+
+.mask .mid {
+    width: 80px;
+    height: 80px;
+    /* text-align: center;*/
+    line-height: 172px;
+    margin: auto;
+}
+
+.mid button {
+    width: 80px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    background-color: skyblue;
+    color: #f3f3f3;
+}
+
+.mid span {
+
+
+    font-family: 'icomoon';
+
+}
+
+.box>.box_img {
+
+    text-align: center;
+    position: relative;
+    height: 140px;
+    line-height: 140px;
+    border-bottom: 2px splid #060505;
+}
+
+.box>.box_img>img {
+    width: 50%;
+
+
+}
+
+.box p {
+    padding-left: 20px;
+    color: #7a7a7a;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

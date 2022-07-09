@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./1.css">
+    <link rel="stylesheet" href="./fonts/iconfont.css">
+
+</head>
+
+<body>
+
+    <div id="container">
+    </div>
+
+    <script>
+
+
+        let btn = document.getElementById("btn");
+        let container = document.getElementById("container");
+
+        function getServerJson() {
+            // 1. 发起请求接收响应; 
+            let xhr = new XMLHttpRequest();
+            xhr.open("GET", "http://localhost/06_data.json");
+            xhr.send(null);
+
+            // 2. 接收服务器响应; 
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    let data = JSON.parse(xhr.responseText);
+                    render(data)
+                }
+            }
+        }
+
+        function render(data) {
+            let html = "";
+            for (let i = 0; i < data.length; i++) {
+                let img = data[i].src;
+                let title = data[i].title;
+                html += `<div class="box ">
+                    <div class="mask">
+                        <span class="iconfont">&#xe98c;</span>
+                        <div class="mid ">
+                            <button>确定</button>
+                            <span class="iconfont">&#xe98f;</span>
+                            <span class="iconfont">&#xe603;</span>
+                        </div>
+                        </div>
+                    <div class="box_img">
+                    <img src="${img}" alt="">
+                    </div>
+                    <p>${title}</p>
+                   
+                </div>`
+            }
+            container.innerHTML = html;
+        }
+
+        window.addEventListener("load", getServerJson);
+
+
+    </script>
+</body>
+
+</html>
