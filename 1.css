@@ -3,6 +3,19 @@
     padding: 0;
 }
 
+@font-face {
+    font-family: 'iconfont';
+    src: url('iconfont.ttf?t=1657194913703') format('truetype');
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 #container {
     display: flex;
     flex-wrap: wrap;
@@ -55,6 +68,7 @@
     /* text-align: center;*/
     line-height: 172px;
     margin: auto;
+    position: relative;
 }
 
 .mid button {
@@ -62,15 +76,26 @@
     height: 40px;
     border-radius: 10px;
     border: none;
-    background-color: skyblue;
+    background-color: rgb(22, 175, 235);
     color: #f3f3f3;
 }
 
 .mid span {
-
-
+    position: absolute;
     font-family: 'icomoon';
+    color: white;
 
+
+}
+
+.mid .left {
+    left: 15px;
+    top: 40px;
+}
+
+.mid .right {
+    left: 45px;
+    top: 40px;
 }
 
 .box>.box_img {
